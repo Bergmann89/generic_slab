@@ -1,6 +1,6 @@
 [package]
 name = "generic_slab"
-version = "0.1.1"
+version = "0.1.2"
 authors = [ "Bergmann89 <info@bergmann89.de>", "Carl Lerche <me@carllerche.com>" ]
 edition = "2018"
 rust-version = "1.31"
