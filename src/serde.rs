@@ -42,7 +42,7 @@ where
         let mut builder = Builder::new();
 
         while let Some((key, value)) = map.next_entry()? {
-            builder.pair(key, value)
+            builder.pair(key, value);
         }
 
         Ok(builder.build())

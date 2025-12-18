@@ -202,7 +202,7 @@ where
     }
 }
 
-impl<'a, T, TKey, TEntries> Debug for EntriesRef<'a, T, TKey, TEntries>
+impl<T, TKey, TEntries> Debug for EntriesRef<'_, T, TKey, TEntries>
 where
     TKey: Key<T>,
 {
@@ -275,7 +275,7 @@ where
     }
 }
 
-impl<'a, T, TKey, TEntries> Debug for EntriesMutRef<'a, T, TKey, TEntries>
+impl<T, TKey, TEntries> Debug for EntriesMutRef<'_, T, TKey, TEntries>
 where
     TKey: Key<T>,
 {

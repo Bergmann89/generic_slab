@@ -1,5 +1,5 @@
+#![allow(missing_docs)]
 #![cfg(feature = "range")]
-#![warn(rust_2018_idioms)]
 
 use std::ops::Bound;
 

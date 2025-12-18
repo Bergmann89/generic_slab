@@ -1,4 +1,4 @@
-#![warn(rust_2018_idioms)]
+#![allow(missing_docs)]
 
 use generic_slab::*;
 

@@ -1,3 +1,5 @@
+//! Build script that sets some flags depending on the used rust version.
+
 fn main() {
     let cfg = match autocfg::AutoCfg::new() {
         Ok(cfg) => cfg,

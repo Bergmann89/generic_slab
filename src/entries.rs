@@ -63,7 +63,7 @@ where
 
     #[inline]
     fn clear(&mut self) {
-        Vec::clear(self)
+        Vec::clear(self);
     }
 
     #[inline]
