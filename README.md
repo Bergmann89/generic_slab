@@ -2,13 +2,7 @@
 
 `generic_slab` is a fork of [`slab`](https://github.com/tokio-rs/slab) that provides more control over the key and storage types. Using a generic approach you can for example implement strong typed keys that must fit the data type stored in the slab, or you can use a fixed size array as backing storage for the slab data.
 
-[![Crates.io][crates-badge]][crates-url]
-[![Build Status][ci-badge]][ci-url]
-
-[crates-badge]: https://img.shields.io/crates/v/generic_slab
-[crates-url]: https://crates.io/crates/generic_slab
-[ci-badge]: https://img.shields.io/github/actions/workflow/status/Bergmann89/generic_slab/ci.yml?branch=master
-[ci-url]: https://github.com/Bergmann89/generic_slab/actions
+<a href="https://github.com/Bergmann89/generic_slab/blob/master/LICENSE"><img src="https://img.shields.io/crates/l/generic_slab" alt="Crates.io License"></a> <a href="https://crates.io/crates/generic_slab"><img src="https://img.shields.io/crates/v/generic_slab" alt="Crates.io Version"></a> <a href="https://crates.io/crates/generic_slab"><img src="https://img.shields.io/crates/d/generic_slab" alt="Crates.io Total Downloads"></a> <a href="https://docs.rs/generic_slab"><img src="https://img.shields.io/docsrs/generic_slab" alt="docs.rs"></a> <a href="https://github.com/Bergmann89/generic_slab/actions/workflows/ci.yml"><img src="https://github.com/Bergmann89/generic_slab/actions/workflows/ci.yml/badge.svg" alt="Github CI"></a> <a href="https://deps.rs/repo/github/Bergmann89/generic_slab"><img src="https://deps.rs/repo/github/Bergmann89/generic_slab/status.svg" alt="Dependency Status"></a>
 
 [Documentation](https://docs.rs/generic_slab)
 

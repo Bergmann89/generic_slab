@@ -120,6 +120,7 @@ where
     /// # use generic_slab::*;
     /// let slab: Slab<i32> = Slab::new();
     /// ```
+    #[must_use]
     pub fn new() -> Self {
         Self::from_entries(TEntries::default())
     }
@@ -130,7 +131,7 @@ where
     TKey: Key<T>,
     TEntries: Entries<T, TKey>,
 {
-    /// Construct a new, empty `Slab` using the provided `entries``.
+    /// Construct a new, empty `Slab` using the provided `entries`.
     ///
     /// Before the slab is created the passed `entries` will be cleared.
     ///
@@ -1522,6 +1523,7 @@ where
     /// // ...but this may make the slab reallocate
     /// slab.insert(11);
     /// ```
+    #[must_use]
     pub fn with_capacity(capacity: usize) -> Self {
         Self::from_entries(TEntries::with_capacity(capacity))
     }
@@ -1773,6 +1775,7 @@ where
     TEntries: Entries<T, TKey>,
 {
     /// Get the key of this vacant entry.
+    #[must_use]
     pub fn key(&self) -> TKey {
         self.slab.vacant_key_at(self.index)
     }
@@ -1788,7 +1791,7 @@ where
     }
 }
 
-impl<'a, T, TKey, TEntries> Debug for GenericVacantEntry<'a, T, TKey, TEntries>
+impl<T, TKey, TEntries> Debug for GenericVacantEntry<'_, T, TKey, TEntries>
 where
     TKey: Key<T>,
 {

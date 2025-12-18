@@ -96,7 +96,7 @@ impl<T> Key<T> for Handle<T> {
         Self {
             id: cx.id,
             index,
-            count: data.map(Clone::clone).unwrap_or_default(),
+            count: data.cloned().unwrap_or_default(),
             marker: PhantomData,
         }
     }
@@ -115,7 +115,7 @@ impl<T> Key<T> for Handle<T> {
     fn convert_into_vacant(cx: &Self::Context, data: Self::OccupiedData) -> Self::VacantData {
         let _cx = cx;
 
-        data
+        data.overflowing_add(1).0
     }
 
     #[inline]
@@ -147,3 +147,23 @@ impl Default for Context {
 }
 
 static NEXT_ID: AtomicUsize = AtomicUsize::new(0);
+
+#[cfg(test)]
+mod tests {
+    use crate::StrongSlab;
+
+    #[test]
+    fn strong_slab() {
+        let mut slab = StrongSlab::new();
+
+        let handle0 = slab.insert("hello");
+        assert_eq!(handle0.index, 0);
+        assert_eq!(handle0.count, 0);
+        slab.remove(handle0);
+
+        let handle1 = slab.insert("world");
+        assert!(slab.get(handle0).is_none());
+        assert_eq!(handle1.index, 0);
+        assert_eq!(handle1.count, 1);
+    }
+}

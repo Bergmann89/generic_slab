@@ -1,5 +1,5 @@
+#![allow(missing_docs)]
 #![cfg(feature = "serde")]
-#![warn(rust_2018_idioms)]
 
 use generic_slab::Slab;
 use serde::{Deserialize, Serialize};
